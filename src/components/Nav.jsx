@@ -2,7 +2,7 @@ import freeLogo from "../assets/images/freeLogo.png";
 import { ICONS } from "../constants/vars";
 const Nav = () => {
   return (
-    <nav className=" mb-20 flex justify-between items-center py-6 px-6 rounded-xl max-sm:flex-col max-sm:gap-4 ">
+    <nav className=" max-lg:mb-8 mb-20 flex justify-between items-center py-6 px-6 rounded-xl max-sm:flex-col max-sm:gap-4 ">
       <div className="w-[89px] h-10 rounded-full   flex items-center max-sm:text-center ">
         <a href="/" className="border-none outline-none">
           {" "}
