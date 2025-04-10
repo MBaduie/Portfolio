@@ -1,5 +1,9 @@
 import { ABOUT_TEXT } from "../constants";
 import personal from "../assets/images/personal.jpg";
+
+//Framer Motion
+import { motion } from "framer-motion";
+
 const About = () => {
   return (
     <section
@@ -11,16 +15,26 @@ const About = () => {
         <span className="text-slate-500"> me</span>
       </h1>
       <div className="flex flex-wrap items-center justify-center lg:items-start">
-        <div className="hidden lg:block w-full lg:w-1/2 lg:p-8">
+        <motion.div
+          initial={{ x: "-100px", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="hidden lg:block w-full lg:w-1/2 lg:p-8"
+        >
           <div className="flex items-center justify-center">
             <img src={personal} alt="about me" className="rounded-2xl " />
           </div>
-        </div>
-        <div className="px-6  w-full lg:w-1/2 lg:p-8 ">
+        </motion.div>
+        <motion.div
+          initial={{ x: "100px", opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="px-6  w-full lg:w-1/2 lg:p-8 "
+        >
           <p className="font-light  leading-8 my-2 max-w-xl  text-justify">
             {ABOUT_TEXT}
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

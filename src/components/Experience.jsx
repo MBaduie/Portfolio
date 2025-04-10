@@ -1,5 +1,6 @@
 import { EXPERIENCES } from "../constants";
-
+//framer motion
+import { motion } from "framer-motion";
 const Experience = () => {
   return (
     <section
@@ -15,10 +16,20 @@ const Experience = () => {
             className="flex items-center lg:items-start flex-col lg:flex-row gap-4 max-lg:border-b max-lg:border-neutral-900"
             key={index}
           >
-            <div className="lg:w-1/2 font-thin text-neutral-200 text-sm lg:text-xl">
+            <motion.div
+              initial={{ x: "-100px", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="lg:w-1/2 font-thin text-neutral-200 text-sm lg:text-xl"
+            >
               {experience.year}
-            </div>
-            <div className="lg:w-1/2 flex flex-col gap-6 items-center lg:items-start justify-start text-justify mb-6">
+            </motion.div>
+            <motion.div
+              initial={{ x: "100px", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="lg:w-1/2 flex flex-col gap-6 items-center lg:items-start justify-start text-justify mb-6"
+            >
               <h3 className="text-base lg:text-2xl font-semibold">
                 {experience.role} - {experience.company}
               </h3>
@@ -35,7 +46,7 @@ const Experience = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>

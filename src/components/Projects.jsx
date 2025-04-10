@@ -1,4 +1,7 @@
 import { PROJECTS } from "../constants";
+//Framer Motion
+import { motion } from "framer-motion";
+
 const Projects = () => {
   return (
     <div className="container mx-auto border-b  border-neutral-900 pb-4 mt-10">
@@ -7,7 +10,13 @@ const Projects = () => {
       </h1>
       <div className="px-4 py-6 mt-20 ">
         {PROJECTS.map((project, index) => (
-          <div className="mb-8 flex flex-wrap lg:justify-center  " key={index}>
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: index * 0.2 }}
+            className="mb-8 flex flex-wrap lg:justify-center  "
+            key={index}
+          >
             <div className="w-full lg:w-1/4">
               <img
                 src={project.image}
@@ -31,7 +40,7 @@ const Projects = () => {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
